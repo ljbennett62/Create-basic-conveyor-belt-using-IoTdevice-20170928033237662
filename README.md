@@ -5,12 +5,11 @@ Create a basic conveyor belt with an IoT device that sends monitoring data to Wa
 
 This guide is the first in a series to walk you, step-by-step, through the process of connecting devices to  Watson IoT Platform, monitoring and acting on device data, and more. Each guide builds on the previous guide, and the sample code in each guide serves as input to the next guide. You can also use these guides standalone by modifying the sample code to suit your purposes.
 
-In this first guide, we set up a connected conveyor belt and use it to send IoT data to {{site.data.keyword.iot_short_notm}}.
-Depending on your skill level, you can follow one or both of the following paths to set up your conveyor belt:
+In this first guide, we set up a connected conveyor belt and use it to send IoT data to Watson IoT Platform. Depending on your skill level, you can follow one or both of the following paths to set up your conveyor belt:
 - Path A  
-This path gets you started quickly by installing a conveyor belt simulator app on {{site.data.keyword.Bluemix_notm}}. The app self-registers a device with {{site.data.keyword.iot_short_notm}} and automatically sends well-formatted data to the platform. Instructions for this path are in [Step 2A - Use the simulator sample app from GitHub](#step-2a---deploy-the-sample-conveyor-belt-web-application).  
+This path gets you started quickly by installing a conveyor belt simulator app on Bluemix. The app self-registers a device with Watson IoT Platform and automatically sends well-formatted data to the platform. Instructions for this path are in [Step 2A - Use the simulator sample app from GitHub](#step-2a---deploy-the-sample-conveyor-belt-web-application).  
 - Path B  
-This path is technically more challenging and requires additional hardware, Python programming skills, and manual registration of your device with {{site.data.keyword.iot_short_notm}}. Instructions for this path are in [Step 2B - Build a physical conveyor belt with a Raspberry Pi and an electric motor](#step-2b---build-a-raspberry-pi-powered-conveyor-belt).
+This path is technically more challenging and requires additional hardware, Python programming skills, and manual registration of your device with Watson IoT Platform. Instructions for this path are in  [Step 2B - Build a physical conveyor belt with a Raspberry Pi and an electric motor](#step-2b---build-a-raspberry-pi-powered-conveyor-belt).
 
 As part of this guide, you will:
 - Create and deploy a Watson IoT Platform organization by using Cloud Foundry CLI.
@@ -147,7 +146,7 @@ The sample app automatically registers a device of type `iot-conveyor-belt` with
 
 ## Step 2B - Build a Raspberry Pi-powered conveyor belt
 
-The Raspberry Pi solution is built using the Python client libraries at: [https://github.com/ibm-watson-iot/iot-python](https://github.com/ibm-watson-iot/iot-python){: new_window}
+The Raspberry Pi solution is built using the Python client libraries at: [https://github.com/ibm-watson-iot/iot-python](https://github.com/ibm-watson-iot/iot-python)
 
 ### Schematic diagram for the circuit
 
@@ -197,7 +196,7 @@ For more information about registering devices, see [Connecting devices](https:/
 	     ```
 	     https://ORG_ID.internetofthings.ibmcloud.com/dashboard/#/overview
 	     ```
-	     Where ORG_ID is the unique six character ID of [your Watson IoT Platform organization](https://console.bluemix.net/docs/services/IoT/iotplatform_overview.html#organizations){: new_window}.
+	     Where ORG_ID is the unique six character ID of [your Watson IoT Platform organization](https://console.bluemix.net/docs/services/IoT/iotplatform_overview.html#organizations).
 	 * In the Overview dashboard, from the menu pane, select **Devices** and then click **Add Device**.
 	 * Create a device type for the device that you are adding.
 	     - Click **Create device type**.
