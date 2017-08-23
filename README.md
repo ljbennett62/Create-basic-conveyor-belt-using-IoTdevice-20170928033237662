@@ -19,6 +19,8 @@ As part of this guide, you will:
 
 > To get started with Watson IoT Platform using a different IoT device, see the [Getting started tutorial](https://console.bluemix.net/docs/services/IoT/getting-started.html#getting-started-with-iotp).
 
+![Architecture Diagram](images/architecture.png)
+
 ## Prerequisites
 
 You will need the following accounts and tools:
@@ -298,18 +300,20 @@ To create a dashboard card to see live conveyor belt data:
 A list of card names is displayed.
 3. Select **Devices I Care About** and then click **Next**.
 4. Click **Connect new data set** and enter the following values for the data set parameters:
-  - Event: sensorData
-  - Property: d.rpm
-  - Name: Belt RPM
-  - Type: Float
-  - Unit: rpm
+      - Event: sensorData
+      - Property: d.rpm
+      - Name: Belt RPM
+      - Type: Float
+      - Unit: rpm
 5. Click **Next**.
 6. On the card preview page, select **L**, and then click **Next**.
 7. On the card information page, change the name of the title to `Belt data` and then click **Submit**.
 8. Change the speed of your belt to see live data in your new card.
 9. Optional: Add a second data set to add acceleration data for the belt.  
+
+
 If you use your phone to connect to the sample app, you can shake the phone to send acceleration data for the belt.
- * Click the menu icon on your card and select to edit the card.
+ 1. Click the menu icon on your card and select to edit the card.
  2. For card source data, select **Cards**.   
  3. Select **Devices I Care About** and click **Next**.
  4. Click **Connect new data set** and enter the following values:
