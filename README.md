@@ -29,7 +29,7 @@ If you choose to use Git to download the code samples you must also have a [GitH
 * Optional: A mobile phone on which to run the *Conveyor belt* sample web application to send accelerometer data.
 
 ## Steps
-* [Deploy Watson IoT Platform](#Step 1 -  Deploy Watson IoT Platform)
+* [Deploy Watson IoT Platform](#step-1----deploy-watson-iot-platform)
 * [Deploy the sample conveyor belt web application](#step-2a---deploy-the-sample-conveyor-belt-web-application)
 * [Build a Raspberry Pi-powered conveyor belt](#step-2b---build-a-raspberry-pi-powered-conveyor-belt)
 * [See raw data in Watson IoT Platform](#step-3---see-raw-data-in-watson-iot-platform)
