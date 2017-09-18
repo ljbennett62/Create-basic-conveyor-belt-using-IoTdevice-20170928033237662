@@ -1,5 +1,5 @@
 ---
-name: "Deploy Java MicroProfile sample on Bluemix Kubernetes Cluster"
+name: "Connecting a conveyor belt device"
 description: "Create a basic conveyor belt with an IoT device that sends monitoring data to Watson IoT Platform on Bluemix"
 version: 0.1
 image: data:image/svg+xml;base64,$file(toolchain.svg,base64)
