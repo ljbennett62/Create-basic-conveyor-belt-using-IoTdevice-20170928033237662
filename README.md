@@ -149,7 +149,7 @@ Example: `https://conveyorbelt.mybluemix.net/`.
 
 * Enter a device ID and token for your device.  
 The sample app automatically registers a device of type `iot-conveyor-belt` with the device ID and token that you provided. For more information about registering devices, see [Connecting devices](https://console.bluemix.net/docs/services/IoT/iotplatform_task.html#iotplatform_subtask1).
-4. Continue with [Step 3 - See raw data in Watson IoT Platform](#step-3---see-raw-data-in-Watson-iot-platform).
+4. Continue with [Step 3 - See raw data in Watson IoT Platform](#step-3---see-raw-data-in-watson-iot-platform).
 
 ## Step 2B - Build a Raspberry Pi-powered conveyor belt
 
