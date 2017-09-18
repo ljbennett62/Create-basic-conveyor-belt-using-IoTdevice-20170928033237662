@@ -30,10 +30,12 @@ You will need the following accounts and tools:
 If you choose to use Git to download the code samples you must also have a [GitHub.com account](https://github.com). You can also download the code as a compressed file without a GitHub.com account.
 * Optional: A mobile phone on which to run the *Conveyor belt* sample web application to send accelerometer data.
 
-## Deploy to Kubernetes Cluster from Bluemix
-If you want to deploy directly to Bluemix, click on 'Deploy to Bluemix' button below to create a Bluemix DevOps service toolchain and pipeline for deploying the Java microservices using MicroProfile sample, else jump to [Steps](#steps)
+## Deploy to Bluemix
+If you want to deploy directly to Bluemix, click on 'Deploy to Bluemix' button below to create a Bluemix DevOps service toolchain and pipeline for deploying basic conveyor belt with an IoT device that sends monitoring data to Watson IoT Platform on Bluemix, else jump to [Steps](#steps)
 
 [![Create Toolchain](https://github.com/IBM/container-journey-template/blob/master/images/button.png)](https://console.ng.bluemix.net/devops/setup/deploy/?repository=https://github.com/IBM/Create-basic-conveyor-belt-using-IoTdevice)
+
+After deploying the application, please continue with [Step 3 - See raw data in Watson IoT Platform](#step-3---see-raw-data-in-watson-iot-platform).
 
 ## Steps
 * [Deploy Watson IoT Platform](#step-1----deploy-watson-iot-platform)
