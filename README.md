@@ -3,12 +3,12 @@ Create a basic conveyor belt with an IoT device that sends monitoring data to Wa
 
 ## Overview and goal
 
-This guide is the first in a series to walk you, step-by-step, through the process of connecting devices to  Watson IoT Platform, monitoring and acting on device data, and more. Each guide builds on the previous guide, and the sample code in each guide serves as input to the next guide. You can also use these guides standalone by modifying the sample code to suit your purposes.
+This guide steps you through the process of connecting devices to  Watson IoT Platform, monitoring and acting on device data
 
-In this first guide, we set up a connected conveyor belt and use it to send IoT data to Watson IoT Platform. Depending on your skill level, you can follow one or both of the following paths to set up your conveyor belt:
-- Path A  
+We set up a connected conveyor belt and use it to send IoT data to Watson IoT Platform. Depending on your skill level, you can follow one or both of the following paths to set up your conveyor belt:
+* Path A  
 This path gets you started quickly by installing a conveyor belt simulator app on Bluemix. The app self-registers a device with Watson IoT Platform and automatically sends well-formatted data to the platform. Instructions for this path are in [Step 2A - Use the simulator sample app from GitHub](#step-2a---deploy-the-sample-conveyor-belt-web-application).  
-- Path B  
+* Path B  
 This path is technically more challenging and requires additional hardware, Python programming skills, and manual registration of your device with Watson IoT Platform. Instructions for this path are in  [Step 2B - Build a physical conveyor belt with a Raspberry Pi and an electric motor](#step-2b---build-a-raspberry-pi-powered-conveyor-belt).
 
 As part of this guide, you will:
@@ -20,6 +20,11 @@ As part of this guide, you will:
 > To get started with Watson IoT Platform using a different IoT device, see the [Getting started tutorial](https://console.bluemix.net/docs/services/IoT/getting-started.html#getting-started-with-iotp).
 
 ![Architecture Diagram](images/architecture.png)
+
+1. Create & Deploy Wtson IoT Platform on Bluemix
+2. Build  & Deploy Simulated Sample Conveyor
+3. Connect the conveyor belt to the Watson IoT Platform
+4. Monitor & Visualize device data on the Watson IoT dashboard.
 
 ## Prerequisites
 
@@ -39,8 +44,9 @@ After deploying the application, please continue with [Step 3 - See raw data in 
 
 ## Steps
 * [Deploy Watson IoT Platform](#step-1----deploy-watson-iot-platform)
-* [Deploy the sample conveyor belt web application](#step-2a---deploy-the-sample-conveyor-belt-web-application)
-* [Build a Raspberry Pi-powered conveyor belt](#step-2b---build-a-raspberry-pi-powered-conveyor-belt)
+* Do one of the following 2 steps:
+** [Deploy the sample conveyor belt web application](#step-2a---deploy-the-sample-conveyor-belt-web-application) 
+** [Build a Raspberry Pi-powered conveyor belt](#step-2b---build-a-raspberry-pi-powered-conveyor-belt)
 * [See raw data in Watson IoT Platform](#step-3---see-raw-data-in-watson-iot-platform)
 * [Visualize live data in Watson IoT Platform](#step-4---visualize-live-data-in-watson-iot-platform)
 
@@ -51,7 +57,7 @@ After deploying the application, please continue with [Step 3 - See raw data in 
 1. From the command line, set your API endpoint by running the cf api command.   
 Replace the `API-ENDPOINT` value with the API endpoint for your region.
 ```
-bx api API-ENDPOINT
+bx api <API-ENDPOINT>
 ```
 Example: `bx api https://api.ng.bluemix.net`
 <table>
@@ -73,7 +79,7 @@ Example: `bx api https://api.ng.bluemix.net`
 ```
 bx login
 ```
-If prompted, select the organization and space where you want to deploy Watson IoT Platform and the sample app.
+If prompted, select the organization and space where you want to deploy Watson IoT Platform and the sample app. **Note** example a) org: lbenn@us.ibm.com  b) space = dev
 
 3. Deploy the Watson IoT Platform service to Bluemix.
 ```    
@@ -83,7 +89,7 @@ bx cf create-service iotf-service iotf-service-free YOUR_IOT_PLATFORM_NAME
 For YOUR_IOT_PLATFORM_NAME, use *iotp-for-conveyor*.  
 Example: `bx cf create-service iotf-service iotf-service-free iotp-for-conveyor`
 
-3. Create your sample conveyor belt device.  
+Next, you will create a sample conveyor belt device. Choose which path you want to take: 
  - Path A: [Step 2A - Use the simulator sample app from GitHub](#step-2a---deploy-the-sample-conveyor-belt-web-application).  
  - Path B: [Step 2B - Build a physical conveyor belt with a Raspberry Pi and an electric motor](#step-2b---build-a-raspberry-pi-powered-conveyor-belt).  
 
@@ -150,7 +156,7 @@ Open the following URL: `https://YOUR_APP_NAME.mybluemix.net`
 Example: `https://conveyorbelt.mybluemix.net/`.
 
 * Enter a device ID and token for your device.  
-The sample app automatically registers a device of type `iot-conveyor-belt` with the device ID and token that you provided. For more information about registering devices, see [Connecting devices](https://console.bluemix.net/docs/services/IoT/iotplatform_task.html#iotplatform_subtask1).
+The sample app automatically registers a device of type `iot-conveyor-belt` with the device ID (e.g. my-first-device) and token that you provided. For more information about registering devices, see [Connecting devices](https://console.bluemix.net/docs/services/IoT/iotplatform_task.html#iotplatform_subtask1).
 4. Continue with [Step 3 - See raw data in Watson IoT Platform](#step-3---see-raw-data-in-watson-iot-platform).
 
 ## Step 2B - Build a Raspberry Pi-powered conveyor belt
@@ -201,29 +207,29 @@ $ git clone https://github.com/ibm-watson-iot/guide-conveyor-rasp-pi
 ```
 3. Register the device with Watson IoT Platform.
 For more information about registering devices, see [Connecting devices](https://console.bluemix.net/docs/services/IoT/iotplatform_task.html#iotplatform_subtask1).
-	 * In the Bluemix console, click **Launch** othe Watson IoT Platform service details page.The Watson IoT Platform web console opens in a new browser tab at the following URL:
-	     ```
-	     https://ORG_ID.internetofthings.ibmcloud.com/dashboard/#/overview
-	     ```
-	     Where ORG_ID is the unique six character ID of [your Watson IoT Platform organization](https://console.bluemix.net/docs/services/IoT/iotplatform_overview.html#organizations).
-	 * In the Overview dashboard, from the menu pane, select **Devices** and then click **Add Device**.
-	 * Create a device type for the device that you are adding.
-	     - Click **Create device type**.
-	     - Enter the device type name `iotp-for-conveyor` and a description for the device type.  
-	>**Note:** You can enter any device type name, but the other guides in the series expect devices that use the device type `iotp-for-conveyor`. If you use a different device type, you must modify the settings in the other guides accordingly.
+     * In the Bluemix console, click **Launch** othe Watson IoT Platform service details page.The Watson IoT Platform web console opens in a new browser tab at the following URL:
+         ```
+         https://ORG_ID.internetofthings.ibmcloud.com/dashboard/#/overview
+         ```
+         Where ORG_ID is the unique six character ID of [your Watson IoT Platform organization](https://console.bluemix.net/docs/services/IoT/iotplatform_overview.html#organizations).
+     * In the Overview dashboard, from the menu pane, select **Devices** and then click **Add Device**.
+     * Create a device type for the device that you are adding.
+         - Click **Create device type**.
+         - Enter the device type name `iotp-for-conveyor` and a description for the device type.  
+    >**Note:** You can enter any device type name, but the other guides in the series expect devices that use the device type `iotp-for-conveyor`. If you use a different device type, you must modify the settings in the other guides accordingly.
 
-	     - Optional: Enter device type attributes and metadata.
-	 * Click **Next** to begin the process of adding your device with the selected device type.
-	 * Enter a device ID, for example, `conveyor_belt`.
-	 * Click **Next** to complete the process.
-	 * Provide an authentication token or accept an automatically generated token.
-	 * Verify the summary information is correct and then click **Add** to add the connection.
-	 * In the device information page, copy and save the following details:
-	     * Organization ID
-	     * Device Type
-	     * Device ID
-	     * Authentication Method
-	     * Authentication Token. You'll need the values for the Organization ID, Device Type, Device ID, and Authentication Token to configure your device to connect to Watson IoT Platform.
+         - Optional: Enter device type attributes and metadata.
+     * Click **Next** to begin the process of adding your device with the selected device type.
+     * Enter a device ID, for example, `conveyor_belt`.
+     * Click **Next** to complete the process.
+     * Provide an authentication token or accept an automatically generated token.
+     * Verify the summary information is correct and then click **Add** to add the connection.
+     * In the device information page, copy and save the following details:
+         * Organization ID
+         * Device Type
+         * Device ID
+         * Authentication Method
+         * Authentication Token. You'll need the values for the Organization ID, Device Type, Device ID, and Authentication Token to configure your device to connect to Watson IoT Platform.
 
 4. Navigate to the *guide-conveyor-rasp-pi* root of the cloned repository.
 5. Make the shell script executable by using this command `sudo chmod +x setup.sh`
@@ -256,18 +262,18 @@ While the motor is running, the program publishes events of event type `sensorDa
 ## Step 3 - See raw data in Watson IoT Platform
 
 1. Verify that the device is registered with Watson IoT Platform.
- * Login to your Bluemix dashboard at:  [https://bluemix.net](https://bluemix.net/)
- * From [your list of services](https://bluemix.net/dashboard/services), click the *iotp-for-conveyor* Watson IoT Platform} service.
- * Click *Launch* to open the Watson IoT Platform dashboard in a new browser tab.  
-  You can bookmark the URL for easy access later.   
-  Example: `https://*iot-org-id*.internetofthings.ibmcloud.com`.
- * From the menu, select **Devices** and verify that your new device is displayed.
+    * Login to your Bluemix dashboard at:  [https://bluemix.net](https://bluemix.net/)
+    * From [your list of services](https://bluemix.net/dashboard/services), click the *iotp-for-conveyor* Watson IoT Platform} service.
+    * Click *Launch* to open the Watson IoT Platform dashboard in a new browser tab.  
+        You can bookmark the URL for easy access later.   
+        Example: `https://*iot-org-id*.internetofthings.ibmcloud.com`.
+    * From the menu, select **Devices** and verify that your new device is displayed.
 
 2. View raw data
- * From the menu, select **Boards**.
- * Select the **Device Centric Analytics** board.
- * Locate the **Devices I Care About** card and select your device.  
-The device name is displayed in the Device Properties card.
+    * From the menu, select **Boards**.
+    * Select the **Device Centric Analytics** board.
+    * Locate the **Devices I Care About** card and select your device.  
+        The device name is displayed in the Device Properties card.
 
 3. Send sensor data to the platform.   
 The device sends data to Watson IoT Platform when sensor readings change. You can simulate this data sending by stopping, starting or changing the speed of the conveyor belt.
@@ -277,19 +283,19 @@ The device sends data to Watson IoT Platform when sensor readings change. You ca
 Message example A:
   ```
 {
-	"d": {
-		"id": "belt1",
-		"ts": 1494341288662,
-		"ay": "0.00",
-		"running": true,
-		"rpm": "0.6"
-	}
+    "d": {
+        "id": "belt1",
+        "ts": 1494341288662,
+        "ay": "0.00",
+        "running": true,
+        "rpm": "0.6"
+    }
 }
   ```
 Message example B:
   ```
 {
-	"d": {
+    "d": {
     "elapsed": 1,
     "running": true,
     "temperature": 35.00,
