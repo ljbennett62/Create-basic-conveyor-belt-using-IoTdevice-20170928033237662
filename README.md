@@ -45,8 +45,11 @@ After deploying the application, please continue with [Step 3 - See raw data in 
 ## Steps
 * [Deploy Watson IoT Platform](#step-1----deploy-watson-iot-platform)
 * Do one of the following 2 steps:
-** [Deploy the sample conveyor belt web application](#step-2a---deploy-the-sample-conveyor-belt-web-application) 
-** [Build a Raspberry Pi-powered conveyor belt](#step-2b---build-a-raspberry-pi-powered-conveyor-belt)
+
+   - [Deploy the sample conveyor belt web application](#step-2a---deploy-the-sample-conveyor-belt-web-application)
+   
+   - [Build a Raspberry Pi-powered conveyor belt](#step-2b---build-a-raspberry-pi-powered-conveyor-belt)
+   
 * [See raw data in Watson IoT Platform](#step-3---see-raw-data-in-watson-iot-platform)
 * [Visualize live data in Watson IoT Platform](#step-4---visualize-live-data-in-watson-iot-platform)
 
